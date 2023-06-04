@@ -109,7 +109,7 @@ div a > img {
 
     .home-page-container 
     .categories {
-        grid-template: 200px 200px / 200px 200px;
+        grid-template: 200px 200px / 200px 200px; 
     }
 }
 
@@ -180,7 +180,6 @@ a {
     gap: 150px;
 }
 
-
 @media only screen and (max-width: 2000px) {
     .grocery-container {
         grid-template: 250px / 150px 150px 150px 150px;
@@ -193,27 +192,20 @@ a {
     
 }
 
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
     .grocery-container {
         grid-template: 150px / 150px;
-        margin-left: 200px;
+        margin-left: 100px;
     }
 
     .grocery-container .grocery img {
         width: 100px;
     }
-
-    .products-container
-    .sidebar-container
-    .sidebar {
-        gap: 100px;
-    }
-
-    .navbar {
-        gap: 50px;
-    }
     
+    .navbar {
+        margin-right: 70px;
+    }
+
 }
 
 .grocery-link {
