@@ -5,16 +5,15 @@ export default function Grocery() {
     const grocery = products.filter(product => product.category === "electronics");
     const groceryComponents = grocery.map(item => {
       return (
-        <Link key={ item.id } to={ item.id } className='grocery-link'>
-          <div className="grocery">
-              <img src={ item.imageUrl } alt="grocery item" />
+        <Link key={ item.id } to={ `products/${item.id}`} className='item-link'>
+          <div className="item">
+              <img src={ item.imageUrl } alt="item" />
               <h3>₦{ item.price.toLocaleString() }</h3>
               <p>{ item.name }</p>
               <p style={{
-                color: 'gold',
-                fontSize: '22px'
+                color: 'gold'
               }}
-              >&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              className='star'>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
           </div>
         </Link>
       );

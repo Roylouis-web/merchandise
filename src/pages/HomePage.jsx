@@ -16,12 +16,12 @@ export default function HomePage() {
 
   return (
     <div className="home-page-container">
-      <h3>Why leave the comfort of your home when you can get it all in one click </h3>
+      <h3>Why leave the comfort of your home when you can get it all in one click? </h3>
       <div className="home-background-image">
         <img src="/assets/aside/pexels-andrea-piacquadio-3756345.jpg" alt="home display" className="first"/>
         <img src="/assets/aside/pexels-kindel-media-6994177.jpg" alt="home display" className="second"/>
       </div>
-      <h3>Make your selection from our various categories</h3>
+      <h3 className="second-h3">Make your selection from our various categories</h3>
       <div className="categories">
         <div className="phones-and-tablets">
           <Link to="/products/phones">

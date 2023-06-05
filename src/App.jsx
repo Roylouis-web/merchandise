@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 import Phones from "./pages/Phones";
 import Grocery from "./pages/Grocery";
 import Electronics from "./pages/Electronics";
@@ -22,8 +23,9 @@ export default function App() {
                   <Route index element={<Grocery />} />
                   <Route path="phones" element={<Phones />} />
                   <Route path="electronics" element={<Electronics />} />
-                  <Route path="computing" element={<Computing />} />
+                  <Route path="computing" element={<Computing />} />             
               </Route>
+              <Route path="products/:id" element={<ProductDetails />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
               <Route path="login" element={<Login />} />

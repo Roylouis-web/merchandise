@@ -1,143 +1,90 @@
-body {
+html, body {
     margin: 0;
+    padding: 0;
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    top: 0;
-    margin-right: 40%;
+    align-items: center;
     background-color: whitesmoke;
-    width: 100%;
-    position: fixed;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .header h2 {
-    font-family:'Courier New', Courier, monospace;
-    border: 2px solid black;
-    font-weight: 500;
-    font-size:larger;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+    border: 1px solid black;
+    padding: 11px;
+    font-weight: lighter;
 }
 
-.navbar {
+.header .navbar {
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
-.navbar a {
-    text-decoration: none;
+.header .navbar a {
     color: black;
+    text-decoration: none;
 }
 
-.home-background-image {
-   margin-top: 20px;
-   display: flex;
-   justify-content: center;
-   flex-direction: row;
-}
-
-.home-background-image > img {
-  height: 250px;
-  object-fit: contain;
-}
-
-@media only screen and (max-width: 700px) {
-    .home-background-image > img {
-        height: 110px;
-    }
-
-    .home-page-container > h3 {
-        margin-left: 10px;
-    }
-
-    .header > h2 {
-        margin-right: 40px;
-    }
-
-    .navbar {
-        margin-right: 50px;
-    }
+.home-page-container  {
+    text-align: center;
 }
 
 .home-page-container {
-    margin-top: 150px;
-    
+    margin-top: 200px;
 }
 
-
-
-.home-page-container > h3 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 50px;
+.home-page-container .second-h3 {
+    margin-top: 110px;
 }
 
-.home-page-container, 
 .home-page-container 
-.categories 
-div a {
+.home-background-image
+img  {
+    height: 350px;
+}
+
+.home-page-container .categories a img {
+    height: 200px;
+}
+
+.home-page-container .categories a  {
+   text-decoration: none;
+   color: black;
+}
+
+.home-page-container .categories a p  {
+   background-color: aliceblue;
+   padding: 20px;
+   width: 150px;
+   border-radius: 20px;
+}
+
+.home-page-container .categories {
+   text-align: center;
+   display: grid;
+   grid-template: 300px 300px / 250px 200px;
+   padding-left: 33%;
+   gap: 20px;
+   margin-bottom: 50px;
+}
+
+.products-container
+ {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.categories {
-    margin-top: 10px;
-    display: grid;
-    grid-template: 250px 250px / 250px 250px;
-    margin-bottom: 20px;
-}
-
-.home-page-container 
-.categories 
-div a > img {
-    width: 200px;
-}
-
-@media only screen and (max-width: 700px) {
-    .home-page-container 
-    .categories 
-     div a > img {
-        width: 130px;
-    }
-
-    .home-page-container 
-    .categories {
-        grid-template: 200px 200px / 200px 200px; 
-    }
-}
-
-.home-page-container 
-.categories 
-div 
-a  p {
-    margin-top: 0;
-    width: 100px;
-    text-align: center;
-    background-color: aliceblue;
-    padding: 5px;
-    color: black;
-}
-
-.home-page-container 
-.categories 
-div 
-a {
-    text-decoration: none; 
+    gap: 300px;
+    margin-top: 130px;
 }
 
 .products-container
 .sidebar-container
-.sidebar a {
-    text-decoration: none;
-    color: black;
-    padding-left: 5px;
+.sidebar h4 {
+    margin-top: 40px;
 }
 
 .products-container
@@ -145,70 +92,128 @@ a {
 .sidebar {
     display: flex;
     flex-direction: column;
-    left: 0;
-    position: fixed;
-    margin-top: 130px;
-    gap: 20px;
     background-color: whitesmoke;
-    padding: 5px;
+    position: fixed;
+    left: 0;
     height: 100%;
+    padding: 5px;
 }
 
-.products-container {
-    display: flex;
-    gap: 100px;
+.products-container
+.sidebar-container
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 30px;
 }
 
-.grocery-container .grocery img {
-    width: 150px;
-    object-fit: cover;
-    padding: 10px;
+
+.item-link .item img {
+    width: 100px;
 }
 
-.grocery-container .grocery img:hover {
-    border-radius: 5px;
-    box-shadow: 3px 3px 1px whitesmoke;
-    border-top: 2px solid whitesmoke;
-    border-left: 1px solid whitesmoke;
+.item-link .item p {
+    max-width: 200px;
+}
+
+.item-link {
+    text-decoration: none;
+    color: black;
 }
 
 .grocery-container {
-    margin-left: auto;
-    margin-top: 200px;
     display: grid;
-    grid-template: 200px 200px / 300px 300px 300px;
-    gap: 150px;
+    grid-template: 350px 300px 300px 300px 300px / 300px 300px 300px 300px;
+    margin-top: 40px;
 }
 
-@media only screen and (max-width: 2000px) {
-    .grocery-container {
-        grid-template: 250px / 150px 150px 150px 150px;
-        margin-left: 100px;
+.star {
+    font-size: larger;
+}
+
+@media only screen and (max-width: 1280px) {
+    .home-page-container 
+    .home-background-image
+    img  {
+        height: 200px;
     }
 
-    .grocery-container .grocery img {
+    .home-page-container .categories {
+        padding-left: 30%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .home-page-container
+    .home-background-image 
+    img {
+        height: 150px;
+    }
+
+    .home-page-container
+    .home-background-image {
+        display: flex;
+        margin-left: 18px;
+    }
+
+    .home-page-container .categories {
+        padding-left: 10px;
+    }
+
+    .home-page-container .categories a img {
+        margin-right: 25px;
+    }
+
+    .home-page-container h3 {
+        padding-left: 50px;
+    }
+
+    .grocery-container {
+        grid-template: 500px /500px 500px;
+    }
+
+    .products-container
+    .sidebar-container
+    .sidebar a {
+        font-size: 40px;
+    }
+
+    .products-container
+    .sidebar-container
+    .sidebar a {
+        margin-bottom: 50px;
+    }
+
+    .products-container
+    .sidebar-container
+    .sidebar h4 {
+        font-size: 40px;
+    }
+
+    .item-link .item p {
+        font-size: 40px;
+        max-width: 400px;
+    }
+
+    .item-link .item img {
         width: 150px;
     }
-    
-}
 
-@media only screen and (max-width: 700px) {
+    .header h2 {
+        font-size: 50px;
+    }
+
+
+    .header .navbar a {
+        font-size: 50px;
+    }
+
     .grocery-container {
-        grid-template: 150px / 150px;
-        margin-left: 100px;
+        margin-top: 150px;
+        margin-left: 80px;
     }
-
-    .grocery-container .grocery img {
-        width: 100px;
-    }
-    
-    .navbar {
-        margin-right: 70px;
-    }
-
 }
 
-.grocery-link {
-    text-decoration: none;
-    color: black;
+@media only screen and (max-width: 375px) {
+
 }
