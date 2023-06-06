@@ -175,7 +175,7 @@ img  {
     .products-container
     .sidebar-container
     .sidebar a {
-        font-size: 40px;
+        font-size: 20px;
     }
 
     .products-container
@@ -187,7 +187,7 @@ img  {
     .products-container
     .sidebar-container
     .sidebar h4 {
-        font-size: 40px;
+        font-size: 20px
     }
 
     .item-link .item p {
@@ -200,12 +200,12 @@ img  {
     }
 
     .header h2 {
-        font-size: 50px;
+        
     }
 
 
     .header .navbar a {
-        font-size: 50px;
+       
     }
 
     .grocery-container {
