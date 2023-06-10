@@ -13,14 +13,12 @@ export default function Header() {
             </NavLink>
             <NavLink 
                 to='about'
-                end
                 style={({ isActive }) => isActive ? { color: 'red' } : null }
             >
                 About
             </NavLink>
             <NavLink 
                 to='contact'
-                end
                 style={({ isActive }) => isActive ? { color: 'red' } : null}
             >
                 Contact

@@ -5,7 +5,7 @@ export default function Computing() {
     const grocery = products.filter(product => product.category === "computing");
     const groceryComponents = grocery.map(item => {
       return (
-        <Link key={ item.id } to={ `..${item.id}`} className='item-link'>
+        <Link key={ item.id } to={ `../${item.id}`} className='item-link'>
           <div className="item">
               <img src={ item.imageUrl } alt="item" />
               <h3>₦{ item.price.toLocaleString() }</h3>

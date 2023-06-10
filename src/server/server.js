@@ -1705,7 +1705,11 @@ createServer({
     Local Language On Display; Hausa, Igbo, Yoruba
     Energy Efficient` });
 
-    server.create("product", { category: "electronics", name: 'Nikon D3200 DSLR Camear With 18-55mm Lens', price: 230000, imageUrl: "/assets/electronics/Nikon.jpg", description: 'A modern styled superb camera that offers you a wide range of capabilities range from ultra clear photos to excellent zooming while ensuring clarity of all potos' });
+    server.create("product", { category: "electronics", name: 'Nikon D3200 DSLR Camear With 18-55mm Lens', price: 230000, imageUrl: "/assets/electronics/Nikon.jpg", description: 'A modern styled superb camera that offers you a wide range of capabilities range from ultra clear photos to excellent zooming while ensuring clarity of all photos' });
+
+    server.db.loadData({
+      users: [],
+    });
 
   },
 
@@ -1715,6 +1719,22 @@ createServer({
 
     this.get("/users", (schema, request) => {
       return schema.users.all();
+    });
+
+    this.get("/users/:email", (schema, request) => {
+      const email = JSON.parse(request.params.email);
+      return schema.users.findBy({ email })
+    });
+
+    this.post("/users", (schema, request) => {
+      const attrs = JSON.parse(request.requestBody);
+      return schema.users.create(attrs);
+    });
+
+    this.delete("/users/:email", (schema, request) => {
+      const email = request.params.email
+      const user = schema.users.find(email);
+      schema.users.delete(user);
     });
 
     this.get("/ratings", (schema, request) => {
@@ -1741,19 +1761,15 @@ createServer({
       return schema.gains.all();
     });
 
-    this.get("/users:email", (schema, request) => {
-      const email = JSON.parse(request.params.email);
-      return schema.users.findBy({ email })
-    });
-
     this.get("/products/:id", (schema, request) => {
       const id = request.params.id;
       return schema.products.find(id);
     });
 
-    this.post("/pendings", (schema, request) => {
+    this.post("/pendings/:id", (schema, request) => {
+      const user = schema.users.find(request.params.id);
       const attrs = JSON.parse(request.requestBody);
-      schema.pendings.create({ attrs });
+      return schema.pendings.create({users: user, ...attrs });
     });
 
     this.delete("/pendings/:id", (schema, request) => {

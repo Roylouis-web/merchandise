@@ -10,6 +10,7 @@ import Grocery from "./pages/Grocery";
 import Electronics from "./pages/Electronics";
 import Computing from "./pages/Computing";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import './server/server';
 import './App.css';
 
@@ -29,6 +30,7 @@ export default function App() {
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
               <Route path="login" element={<Login />} />
+              <Route path="sign-up" element={<SignUp />} />
           </Route>
        </Routes>
     </BrowserRouter>
