@@ -2,10 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function Grocery() {
-  
+export default function PhonesAndTablets() {
   //state called products which will be updated with all available products 
-
   const [products, setProducts] = useState([]);
   useState(() => {
     const getProducts = async () => {
@@ -15,13 +13,13 @@ export default function Grocery() {
     getProducts();
   }, []);
 
-  //filter for grocery items
-  const grocery = products.filter(product => product.category === "grocery");
+  //filter for phones and tablets
+  const phonesAndTablets = products.filter(product => product.category === "phones-and-tablets");
 
-  //create an array of grocery components
-  const groceryComponent = grocery.map(item => {
+  //create an array of phones and tablets components
+  const phonesAndTabletsComponents = phonesAndTablets.map(item => {
     return (
-        <Link key={ item.id } to={ item.id } className="product-details-link">
+        <Link key={ item.id } to={ `../${item.id}` } className="product-details-link">
             <div className="product-container">
                 <img src={ item.imageUrl } alt="merchandise" />
                 <h3 className="product-price">{ `₦ ${ item.price.toLocaleString() }` }</h3>
@@ -39,7 +37,7 @@ export default function Grocery() {
   })
   return (
     <div className="products-container">
-        { groceryComponent }
+        { phonesAndTabletsComponents }
     </div>
   );
 };

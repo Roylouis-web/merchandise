@@ -1,62 +1,74 @@
-import { useState } from "react";
-import { useNavigate, useSearchParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
-
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-  const [searchParam, setSearchParam] = useSearchParams();
-  const message = searchParam.get("message");
-  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [message, setMessage] = useState("Log in");
+  const [loginStatus, setLogInStatus] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData(prev => {
-      return { ...prev, [name]: value }
-    });
-  }
+  const handleChange = ($event) => {
+    const { name, value } = $event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = () => {
-    
-  }
+  const handleLogin = () => {
+    setMessage("Logging in...");
+    setTimeout(() => {
+      setMessage("Log in");
+      setLogInStatus("Log in successful !");
+    }, 2000);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 4000);
+  };
+
+  useEffect(() => {
+    const status = Object.values(formData).every((value) => value);
+    status ? setIsCompleted(true) : setIsCompleted(false);
+  }, [formData]);
 
   return (
-    <div className="login-container">
-      { message && <p style={{color: "red"}}>{message}</p> }
-      <h1>Log in to your account</h1>
-      <form>
-        <input 
-          type="email" 
-          name="email"
+    <div className="login-page-container">
+      <form className="form">
+        <h1>Log In</h1>
+        <input
+          type="email"
           id="email"
+          name="email"
+          placeholder="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="email"
         />
         <br />
         <br />
-        <input 
-          type="password" 
-          name="password"
+        <input
+          type="password"
           id="password"
+          name="password"
+          placeholder="password"
           value={formData.password}
           onChange={handleChange}
-          placeholder="password"
         />
         <br />
         <br />
-        <button onClick={handleSubmit} type="button">Log In</button>
-        </form>
-        <p>or</p>
-        <Link 
-          to="/sign-up"
-          style={{color: 'black'}}
+        <button
+          type="button"
+          onClick={handleLogin}
+          disabled={isCompleted ? false : true}
+          className="login-btn"
         >
-            Sign Up
-        </Link>
+          {message}
+        </button>
+        {loginStatus !== "" && <p style={{ color: "green" }}>{loginStatus}</p>}
+        <p>or</p>
+        <Link to="/sign-up">Sign Up</Link>
+      </form>
     </div>
   );
-};
+}

@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Table of Content
+- What is Merchandise ?
+- How to navigate the application ?
+- Why certain languages and frameworks were used ?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is Merchandise ?
+Merchandise is e-commerce web application that inspired by various e-commerce web applications available all over the world like Jumia, AliExpress, Amazon, Konga etc. The CEO and Founder of Merchandise is Le Roy Powell-Louis who happens to be a Full Stack Software Engineer, Data Analyst and an Economist. With a goal of ensuring the continuance of e-commerce web applications, Le Roy decided to add Merchandise to the list of available e-commerce web applications with the goal of ensuring optimum satisfaction by customers with the various goods purchased by them as well as ensuring profit maximisation.
 
-## Available Scripts
+## How to navigate the app ?
 
-In the project directory, you can run:
+The web application consist of 6 major routes which are:
+- Home
+- Products
+- About
+- Contact
+- Login
+- Account
+  
+  ### Home 
+  This route contains contents of the landing page of the application. It consists of a display of images in which one emphasises the app being for e-commerce while the others represent links to different categories of products available.
 
-### `npm start`
+  ### Products
+  This route contains nested routes to each category of products in a sidebar with the grocery category being the default category displayed on navigating to this route.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  ### About
+  This route contains full details on three major sections which are Mission, Story and Team members.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  ### Contact
+  This route contains a form that allows users contact us by providing their first name, last name, email and their phone number.
 
-### `npm test`
+  ### Login
+  This route contains a form that request the user to login in with the email and password as well a link to the sign up page incase the user doesn't have an account.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ### Account
+  This is the final route and it contains links to three other routes namely orders, cart and purchases. The orders route contains all items which have been ordered by the user, the cart conatins items which the user has added his cart for possible purchases and the purchases conatains all successful purchases by the user.
 
-### `npm run build`
+  ### Why certain languages were used ? 
+  The list of languages used are:
+  - ES6: ES6 had to be utilised in this project because of its modern and clean syntax, thereby ensuring clean code in the codebase
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - CSS3: Some CSS frameworks may slow down the app while the browser is trying to load them, so CSS3 was used instead in other to enable to app to load styles very quickly, thereby improving user experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Miragejs: Miragejs is an in memory mock api that is being temporarily used and it has proved to be very useful and it will continue to be utilised until the backend of the application is completed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Reactjs: Being one of the modern and the most used Frontend framework, React was used in this project and has really being a great help. It provides the concept of components which could used to divide a huge codebase into smaller chunks thereby leading to clean code, it provides react-router-dom which brings about client side routing which helped a lot since our backend is not yet available in production.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Jest: Jest is a React testing framework and really does a great job when it comes to testing all components and functions in the codebase therefore minimizing the risks of bugs which could be very bad for the user experience.
